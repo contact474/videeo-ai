@@ -111,7 +111,7 @@ const TestimonialsColumn = (props: {
                                 >
                                     <blockquote className="m-0 p-0">
                                         <p className="text-white/70 leading-relaxed font-normal m-0 italic text-lg">
-                                            "{text}"
+                                            &quot;{text}&quot;
                                         </p>
                                         <footer className="flex items-center gap-4 mt-8">
                                             <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-bold text-xs shrink-0">
