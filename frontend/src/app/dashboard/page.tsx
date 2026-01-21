@@ -111,7 +111,7 @@ export default function Dashboard() {
                 </Link>
                 <button
                     onClick={() => { setVideoUrl(null); setScript(null); setPrompt(''); }}
-                    className="flex items-center gap-2 w-full p-3 rounded-xl bg-gray-900 border border-gray-800 text-sm font-semibold hover:bg-gray-800 transition-colors mb-8"
+                    className="flex items-center gap-2 w-full p-3 rounded-lg bg-gray-900 border border-gray-800 text-sm font-semibold hover:bg-gray-800 transition-colors mb-8"
                 >
                     <Sparkles className="w-4 h-4 text-yellow-400" />
                     New Project
@@ -194,10 +194,10 @@ export default function Dashboard() {
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
-                                    <button className="flex-1 bg-white text-black py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors shadow-lg active:scale-95">
+                                    <button className="flex-1 bg-white text-black py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors shadow-lg active:scale-95">
                                         Download MP4
                                     </button>
-                                    <button className="flex-1 bg-gray-900 text-white py-4 rounded-xl font-semibold border border-gray-800 hover:bg-gray-800 transition-colors active:scale-95">
+                                    <button className="flex-1 bg-gray-900 text-white py-4 rounded-lg font-semibold border border-gray-800 hover:bg-gray-800 transition-colors active:scale-95">
                                         Edit Script
                                     </button>
                                 </div>
