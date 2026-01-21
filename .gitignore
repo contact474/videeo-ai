@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Node
+node_modules/
+/frontend/.next/
+/frontend/out/
+/frontend/build
+.DS_Store
+
+# Next.js
+.next/
+
+# Supabase
+.supabase/
+
+# Local temp
+backend/temp/
