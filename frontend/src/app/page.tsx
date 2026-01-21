@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { BrandScroller } from '@/components/ui/brand-scroller'
 import TestimonialV2 from '@/components/ui/testimonial-v2'
 import TypingAnimation from '@/components/ui/typing-animation'
+import BackgroundSelector from '@/components/ui/background-selector'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -241,26 +242,64 @@ export default function LandingPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-[#111] border border-white/10 rounded-3xl p-8 aspect-square flex flex-col justify-center">
-                <div className="mb-4 text-[10px] font-bold text-white/30 tracking-widest">SELECT BACKGROUND</div>
-                <div className="grid grid-cols-3 gap-2">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className={`aspect-square bg-white/10 rounded-lg ${i === 3 ? 'ring-2 ring-yellow-500 p-0.5' : ''}`}>
-                      <div className={`w-full h-full bg-white/20 rounded-md ${i === 3 ? 'bg-white/40' : ''}`} />
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 min-h-[520px] relative overflow-hidden">
+                {/* Video Orientation Section */}
+                <div className="mb-8">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">VIDEO ORIENTATION</div>
+                  <div className="relative">
+                    <select className="w-full p-5 bg-black/60 border border-white/10 rounded-2xl text-base text-white appearance-none cursor-pointer backdrop-blur-sm pr-12 font-medium">
+                      <option>16:9 Landscape (YouTube)</option>
+                      <option>9:16 Portrait (TikTok)</option>
+                      <option>1:1 Square (Instagram)</option>
+                    </select>
+                    <ChevronRight className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 rotate-90 pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* Background Selection Section */}
+                <div className="mb-8">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">SELECT BACKGROUND</div>
+                  <BackgroundSelector
+                    images={[
+                      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                      'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=400&fit=crop',
+                      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop',
+                      'https://images.unsplash.com/photo-1518893063132-36e46dbe2428?w=400&h=400&fit=crop'
+                    ]}
+                    autoPlayInterval={3000}
+                  />
+                </div>
+
+                {/* Background Sound Section */}
+                <div>
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">BACKGROUND SOUND</div>
+                  <div className="p-5 bg-gradient-to-br from-yellow-500/10 to-orange-500/5 border border-yellow-500/20 rounded-2xl flex items-center justify-between backdrop-blur-sm shadow-[0_0_20px_rgba(234,179,8,0.1)]">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center shrink-0">
+                        <Mic className="w-6 h-6 text-black" strokeWidth={2.5} />
+                      </div>
+                      <span className="text-base font-bold text-yellow-500">Deep Ocean</span>
                     </div>
-                  ))}
-                </div>
-                <div className="mt-6 p-4 bg-yellow-500/5 border border-yellow-500/10 rounded-xl flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center"><Mic className="w-4 h-4 text-black" /></div>
-                    <span className="text-xs font-bold text-yellow-500">Deep Ocean</span>
+                    <div className="flex-1 max-w-[200px] ml-6">
+                      <div className="h-2 bg-black/30 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-yellow-500 to-yellow-400"
+                          initial={{ width: '0%' }}
+                          animate={{ width: '70%' }}
+                          transition={{ duration: 1.5, ease: "easeOut" }}
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-20 h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="w-2/3 h-full bg-yellow-500" />
-                  </div>
                 </div>
+
+                {/* Subtle glow effect */}
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
               </div>
-              <h3 className="text-xl font-bold">2. Customise & Style</h3>
+              <div>
+                <h3 className="text-2xl font-bold mb-2">2. Customise & Style</h3>
+                <p className="text-white/40 text-sm leading-relaxed">Select orientation and pick a background scene and music from free templates.</p>
+              </div>
             </div>
 
             <div className="space-y-6">
