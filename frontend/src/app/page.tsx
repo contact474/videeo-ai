@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight } from 'lucide-react'
+import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight, Music } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BrandScroller } from '@/components/ui/brand-scroller'
 import TestimonialV2 from '@/components/ui/testimonial-v2'
@@ -395,10 +395,45 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-32">
-            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-end min-h-[400px]">
-              <Layers className="w-10 h-10 text-white/20 mb-auto" />
-              <h3 className="text-2xl font-bold leading-tight mb-2">Instantly automate videos.</h3>
-              <p className="text-white/40 text-sm">Generate captions, effects, music, & backgrounds in a second.</p>
+            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[400px] relative overflow-hidden group">
+              {/* Floating Pills Animation */}
+              <div className="absolute inset-x-0 top-0 bottom-24 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#111] via-transparent to-[#111] z-10 pointer-events-none" />
+
+                <motion.div
+                  animate={{ y: ["-50%", "0%"] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="flex flex-col gap-6 p-8 opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                >
+                  {[1, 2].map((loop) => (
+                    <React.Fragment key={loop}>
+                      {/* Pill 1: Video Background */}
+                      <div className="self-end px-5 py-2.5 rounded-full border border-white/10 bg-white/5 flex items-center gap-3 backdrop-blur-sm transform hover:scale-105 transition-transform hover:border-yellow-500/50 hover:bg-white/10">
+                        <Music className="w-4 h-4 text-yellow-500" />
+                        <span className="text-xs font-semibold text-white/90">Video Background</span>
+                      </div>
+
+                      {/* Pill 2: Script Creation */}
+                      <div className="self-start px-5 py-2.5 rounded-full border border-white/10 bg-white/5 flex items-center gap-3 backdrop-blur-sm transform hover:scale-105 transition-transform hover:border-yellow-500/50 hover:bg-white/10">
+                        <div className="w-4 h-4 rounded-full bg-yellow-500 flex items-center justify-center text-[9px] font-black text-black">AI</div>
+                        <span className="text-xs font-semibold text-white/90">Script Creation</span>
+                      </div>
+
+                      {/* Pill 3: Voice Narrator */}
+                      <div className="self-end px-5 py-2.5 rounded-full border border-white/10 bg-white/5 flex items-center gap-3 backdrop-blur-sm transform hover:scale-105 transition-transform hover:border-yellow-500/50 hover:bg-white/10">
+                        <Mic className="w-4 h-4 text-yellow-500" />
+                        <span className="text-xs font-semibold text-white/90">Voice Narrator</span>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </motion.div>
+              </div>
+
+              <div className="relative z-20 mt-auto">
+                <Layers className="w-10 h-10 text-white/20 mb-6" />
+                <h3 className="text-2xl font-bold leading-tight mb-2">Instantly automate videos.</h3>
+                <p className="text-white/40 text-sm">Generate captions, effects, music, & backgrounds in a second.</p>
+              </div>
             </div>
 
             <div className="md:col-span-5 bg-[#111] border border-white/10 rounded-3xl p-12 flex flex-col items-center justify-center text-center">
