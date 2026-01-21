@@ -60,9 +60,11 @@ Follow these exact steps to get Videeo.ai live on Vercel and Supabase.
 4.  **Deploy**:
     - Hit **Deploy**. Vercel will build the Next.js frontend and the FastAPI serverless functions.
 
----
-
-## Part 3: Final Verification
+### Quick Git Push Commands
+Run these in your terminal to push specifically to your `contact474` account:
+```bash
+git push -u origin main
+```
 
 1.  **API Check**: Open `https://your-domain.vercel.app/api` in your browser. You should see `{"message":"Videeo.ai API is running"}`.
 2.  **Dashboard**: Go to `/dashboard`, type a prompt, and watch the networking tab to see the `/generate-video` call succeed.

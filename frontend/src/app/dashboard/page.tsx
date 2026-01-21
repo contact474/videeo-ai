@@ -5,25 +5,34 @@ import { Send, Loader2, Play, Video, ChevronLeft, Sparkles, Clock } from 'lucide
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 
+interface Project {
+    id: string
+    prompt: string
+    video_url: string | null
+    script: string | null
+    created_at: string
+}
+
 export default function Dashboard() {
     const [prompt, setPrompt] = useState('')
     const [loading, setLoading] = useState(false)
     const [videoUrl, setVideoUrl] = useState<string | null>(null)
     const [script, setScript] = useState<string | null>(null)
-    const [projects, setProjects] = useState<any[]>([])
-
-    useEffect(() => {
-        fetchProjects()
-    }, [])
+    const [projects, setProjects] = useState<Project[]>([])
 
     const fetchProjects = async () => {
-        const { data, error } = await supabase
+        const { data } = await supabase
             .from('projects')
             .select('*')
             .order('created_at', { ascending: false })
 
         if (data) setProjects(data)
     }
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        fetchProjects()
+    }, [])
 
     const handleGenerate = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -87,7 +96,7 @@ export default function Dashboard() {
         }
     }
 
-    const selectProject = (p: any) => {
+    const selectProject = (p: Project) => {
         setVideoUrl(p.video_url)
         setScript(p.script)
         setPrompt(p.prompt)

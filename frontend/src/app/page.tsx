@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { Play, Mic, Video, Layers, CheckCircle, ChevronRight } from 'lucide-react'
+import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
   return (
@@ -180,7 +180,6 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-32">
-            {/* Bento cards */}
             <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-end min-h-[400px]">
               <Layers className="w-10 h-10 text-white/20 mb-auto" />
               <h3 className="text-2xl font-bold leading-tight mb-2">Instantly automate videos.</h3>
@@ -247,7 +246,6 @@ export default function LandingPage() {
 
       {/* Social Tools Section */}
       <section className="py-32 relative overflow-hidden bg-black">
-        {/* Subtle Grid Background */}
         <div className="absolute inset-0 opacity-10 pointer-events-none"
           style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
@@ -268,18 +266,17 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 text-left">
             {[
-              { platform: 'Instagram Reels', desc: 'Transform Instagram Reels into engaging content by adding gameplay to captivate viewers.', icon: <span className="text-3xl">📸</span> },
-              { platform: 'Tiktok Videos', desc: 'Elevate your TikTok videos by adding gameplay to create captivating and entertaining content.', icon: <span className="text-3xl">♪</span> },
-              { platform: 'Youtube Shorts', desc: 'Enhance your YouTube Shorts by adding gameplay to create dynamic and engaging content.', icon: <span className="text-3xl">▶</span> },
-              { platform: 'Facebook Reels', desc: 'Transform Facebook Reels into engaging content by adding gameplay to captivate viewers.', icon: <span className="text-3xl">f</span> },
-              { platform: 'Twitter (X) videos', desc: 'Enhance your X videos by incorporating gameplay to grab attention and keep viewers hooked.', icon: <span className="text-3xl">𝕏</span> },
-              { platform: 'Thread Videos', desc: 'Boost your Thread videos with gameplay! Engaging visuals captivate viewers and enhance your content.', icon: <span className="text-3xl">@</span> },
-            ].map((tool, i) => (
+              { platform: 'Instagram Reels', desc: 'Transform Instagram Reels into engaging content by adding gameplay to captivate viewers.', icon: '📸' },
+              { platform: 'Tiktok Videos', desc: 'Elevate your TikTok videos by adding gameplay to create captivating and entertaining content.', icon: '♪' },
+              { platform: 'Youtube Shorts', desc: 'Enhance your YouTube Shorts by adding gameplay to create dynamic and engaging content.', icon: '▶' },
+              { platform: 'Facebook Reels', desc: 'Transform Facebook Reels into engaging content by adding gameplay to captivate viewers.', icon: 'f' },
+              { platform: 'Twitter (X) videos', desc: 'Enhance your X videos by incorporating gameplay to grab attention and keep viewers hooked.', icon: '𝕏' },
+              { platform: 'Thread Videos', desc: 'Boost your Thread videos with gameplay! Engaging visuals captivate viewers and enhance your content.', icon: '@' },
+            ].map((tool) => (
               <div key={tool.platform} className="group border-l border-white/5 pl-8 py-4 hover:border-yellow-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-black transition-all text-3xl">
                   {tool.icon}
                 </div>
-                {/* Visual Line Decor */}
                 <div className="flex gap-1.5 mb-6">
                   <div className="w-12 h-0.5 bg-white/10" />
                   <div className="w-4 h-0.5 bg-white/10" />
@@ -315,7 +312,7 @@ export default function LandingPage() {
               { text: "Our engagement rates on Instagram have tripled since we started using the generated captions and dynamic visual effects.", name: "Hassan Ali", role: "Influencer", color: "bg-white/5" },
             ].map((t, i) => (
               <div key={i} className={`break-inside-avoid p-8 rounded-3xl border border-white/10 ${t.color}`}>
-                <p className="text-lg font-medium leading-relaxed mb-8">"{t.text}"</p>
+                <p className="text-lg font-medium leading-relaxed mb-8">&quot;{t.text}&quot;</p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold ring-2 ring-yellow-500/20">
                     {t.name.split(' ').map(n => n[0]).join('')}
@@ -365,7 +362,6 @@ export default function LandingPage() {
       {/* Final CTA Section */}
       <section className="py-32 bg-black px-6">
         <div className="max-w-5xl mx-auto p-12 md:p-24 rounded-[40px] border border-white/10 bg-gradient-to-br from-yellow-500/10 via-black to-black relative overflow-hidden text-center">
-          {/* Glowing bits */}
           <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
           <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
 
