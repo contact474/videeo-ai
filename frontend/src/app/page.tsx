@@ -38,7 +38,7 @@ export default function LandingPage() {
         {/* Background Overlay Effect */}
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center brightness-[0.3]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[url('/hero-bg.png')] bg-cover bg-center brightness-[0.5]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
