@@ -7,6 +7,7 @@ import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight } from 'lucide
 import { motion, AnimatePresence } from 'framer-motion'
 import { BrandScroller } from '@/components/ui/brand-scroller'
 import TestimonialV2 from '@/components/ui/testimonial-v2'
+import TypingAnimation from '@/components/ui/typing-animation'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -191,17 +192,52 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-6">
-              <div className="bg-[#111] border border-white/10 rounded-3xl p-8 aspect-square relative overflow-hidden group">
-                <div className="absolute top-8 left-8 text-xs font-bold text-white/30 tracking-widest">ENTER YOUR STORY TOPIC</div>
-                <div className="mt-12 p-4 bg-black border border-white/10 rounded-xl text-sm italic text-white/60">
-                  Write a story about Spanish lullaby |
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 min-h-[520px] relative overflow-hidden group">
+                {/* Header */}
+                <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-8">ENTER YOUR STORY TOPIC</div>
+
+                {/* Input field with typing animation */}
+                <div className="mb-8 p-5 bg-black/60 border border-white/10 rounded-2xl text-base italic text-white/90 min-h-[60px] flex items-center backdrop-blur-sm">
+                  <TypingAnimation
+                    phrases={[
+                      'Write a story about Spanish lullaby',
+                      'Write a story about space exploration',
+                      'Write a story about ancient civilizations',
+                      'Write a story about ocean mysteries'
+                    ]}
+                    typingSpeed={80}
+                    deletingSpeed={40}
+                    pauseDuration={2500}
+                  />
                 </div>
-                <div className="mt-4 flex gap-2">
-                  <div className="px-3 py-1.5 rounded-lg bg-white/5 text-[10px] font-bold">Funny</div>
-                  <div className="px-3 py-1.5 rounded-lg bg-yellow-500/10 text-yellow-500 text-[10px] font-bold border border-yellow-500/20">Lullaby ✨</div>
+
+                {/* Story Tone Section */}
+                <div className="mb-8">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">SELECT STORY TONE</div>
+                  <div className="flex gap-3">
+                    <div className="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-white/60 hover:bg-white/10 transition-colors cursor-pointer">Funny</div>
+                    <div className="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-white/60 hover:bg-white/10 transition-colors cursor-pointer">Fairy</div>
+                    <div className="px-5 py-2.5 rounded-xl bg-gradient-to-br from-yellow-500/20 to-orange-500/10 text-yellow-500 text-sm font-bold border border-yellow-500/30 shadow-[0_0_20px_rgba(234,179,8,0.15)] cursor-pointer flex items-center gap-2">
+                      Lullaby <span className="text-xs">✨</span>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Max Words Section */}
+                <div>
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">MAX WORDS</div>
+                  <div className="p-5 bg-black/60 border border-white/10 rounded-2xl text-base text-white/50 backdrop-blur-sm">
+                    500 words
+                  </div>
+                </div>
+
+                {/* Subtle glow effect */}
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-yellow-500/5 blur-[100px] rounded-full pointer-events-none" />
               </div>
-              <h3 className="text-xl font-bold">1. Write & Outline</h3>
+              <div>
+                <h3 className="text-2xl font-bold mb-2">1. Write & Outline</h3>
+                <p className="text-white/40 text-sm leading-relaxed">Kick off by crafting a script with a prompt or by choosing from available template suggestions.</p>
+              </div>
             </div>
 
             <div className="space-y-6">
