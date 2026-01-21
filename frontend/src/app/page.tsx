@@ -50,7 +50,7 @@ export default function LandingPage() {
           {/* Right Actions */}
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Log In</Link>
-            <Link href="/dashboard" className={`bg-white text-black rounded-full font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
+            <Link href="/dashboard" className={`bg-white text-black rounded-xl font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
               }`}>
               Try VidEEo.ai
             </Link>
