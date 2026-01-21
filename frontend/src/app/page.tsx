@@ -303,17 +303,79 @@ export default function LandingPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-[#111] border border-white/10 rounded-3xl p-8 aspect-square flex flex-col items-center justify-center text-center">
-                <div className="w-32 h-32 rounded-full border-2 border-dashed border-white/10 flex items-center justify-center relative">
-                  <div className="absolute inset-0 rounded-full border-t-2 border-yellow-500 animate-spin" />
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center"><Play className="w-8 h-8 text-black fill-current" /></div>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 aspect-square relative overflow-hidden flex flex-col items-center justify-center text-center group"
+              >
+                {/* Dark golden glow background - pulsing */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <motion.div
+                    animate={{ opacity: [0.4, 0.7, 0.4], scale: [0.9, 1.1, 0.9] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-80 h-80 bg-yellow-600/15 blur-[120px] rounded-full"
+                  />
                 </div>
-                <div className="mt-8 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold flex items-center gap-2">
-                  <CheckCircle className="w-3 h-3 text-green-500" /> Ready to Export
-                </div>
-                <div className="mt-2 text-[10px] font-bold text-white/30 tracking-widest">1080P • 60FPS</div>
+
+                {/* Large golden arc ring - rotating */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-56 h-56 rounded-full border-[3px] border-transparent bg-gradient-to-br from-yellow-500 via-yellow-600 to-transparent"
+                  style={{
+                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    maskComposite: 'exclude',
+                    padding: '3px',
+                    opacity: 0.6
+                  }}
+                />
+
+                {/* Dashed circle outline */}
+                <div className="absolute w-56 h-56 rounded-full border-2 border-dashed border-white/5" />
+
+                {/* Main circle container with glow - floating */}
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative w-28 h-28 rounded-full flex items-center justify-center mb-6"
+                >
+                  {/* Inner white/cream circle with sparkle icon */}
+                  <motion.div
+                    whileHover={{ scale: 1.1, boxShadow: "0 0 80px rgba(234,179,8,0.5)" }}
+                    className="relative w-28 h-28 rounded-full bg-gradient-to-br from-yellow-50 to-white flex items-center justify-center shadow-[0_0_60px_rgba(234,179,8,0.3)] transition-shadow duration-500"
+                  >
+                    {/* Sparkle icon - pulsing */}
+                    <motion.svg
+                      animate={{ scale: [1, 1.15, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-12 h-12 text-orange-500"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                      <circle cx="18" cy="6" r="2" />
+                    </motion.svg>
+                  </motion.div>
+                </motion.div>
+
+                {/* Ready to Export badge - smooth appearance */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="relative px-4 py-2 rounded-full bg-black/40 border border-white/10 text-xs font-semibold flex items-center gap-2 backdrop-blur-sm shadow-lg group-hover:bg-black/60 transition-colors"
+                >
+                  <CheckCircle className="w-3.5 h-3.5 text-green-500" /> Ready to Export
+                </motion.div>
+
+                {/* Video specs */}
+                <div className="relative mt-2 text-[10px] font-bold text-white/30 tracking-widest">1080p • 60FPS</div>
+              </motion.div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-2">3. Finish & Export</h3>
+                <p className="text-white/40 text-sm leading-relaxed">Select the export format and download the generated videos, script, or narration.</p>
               </div>
-              <h3 className="text-xl font-bold">3. Finish & Export</h3>
             </div>
           </div>
         </div>
