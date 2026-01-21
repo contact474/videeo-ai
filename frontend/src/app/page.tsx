@@ -430,7 +430,6 @@ export default function LandingPage() {
               </div>
 
               <div className="relative z-20 mt-auto">
-                <Layers className="w-10 h-10 text-white/20 mb-6" />
                 <h3 className="text-2xl font-bold leading-tight mb-2">Instantly automate videos.</h3>
                 <p className="text-white/40 text-sm">Generate captions, effects, music, & backgrounds in a second.</p>
               </div>
