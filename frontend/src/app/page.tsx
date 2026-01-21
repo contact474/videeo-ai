@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
@@ -343,7 +344,14 @@ export default function LandingPage() {
               { title: "Fitness Motivation Series", tag: "HEALTH", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800" }
             ].map((v, i) => (
               <div key={i} className="group relative aspect-video rounded-3xl overflow-hidden border border-white/10">
-                <img src={v.img} alt={v.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50" />
+                <Image
+                  src={v.img}
+                  alt={v.title}
+                  width={800}
+                  height={450}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50"
+                  unoptimized
+                />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Play className="w-6 h-6 text-white fill-current" />
