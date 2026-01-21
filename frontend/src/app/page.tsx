@@ -19,31 +19,32 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-yellow-500/30">
       {/* Navbar */}
-      <nav className={`fixed z-50 transition-all duration-500 ease-in-out ${scrolled
-          ? 'top-6 left-1/2 -translate-x-1/2 w-fit min-w-[800px] rounded-full border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
-          : 'top-0 left-0 w-full border-b border-white/5 bg-black/60 backdrop-blur-xl'
+      <nav className={`fixed inset-x-0 mx-auto z-50 transition-all duration-700 ease-in-out ${scrolled
+          ? 'top-6 max-w-[920px] rounded-full border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-[95%]'
+          : 'top-0 max-w-full border-b border-transparent bg-transparent backdrop-blur-none w-full'
         }`}>
-        <div className={`max-w-7xl mx-auto transition-all duration-500 flex items-center justify-between ${scrolled ? 'h-14 px-8' : 'h-20 px-6'
+        <div className={`mx-auto transition-all duration-700 flex items-center justify-between ${scrolled ? 'h-14 px-8' : 'h-20 px-8 max-w-7xl'
           }`}>
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className={`transition-all duration-500 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors ${scrolled ? 'w-6 h-6' : 'w-8 h-8 bg-white'
+              <div className={`transition-all duration-700 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors ${scrolled ? 'w-6 h-6' : 'w-8 h-8 bg-white'
                 }`}>
-                <Play className={`transition-all duration-500 ${scrolled ? 'w-3 h-3 text-white' : 'w-5 h-5 text-black'
+                <Play className={`transition-all duration-700 ${scrolled ? 'w-3 h-3 text-white' : 'w-5 h-5 text-black'
                   } fill-current`} />
               </div>
-              <span className={`font-bold tracking-tight transition-all duration-500 ${scrolled ? 'text-lg' : 'text-xl'
+              <span className={`font-bold tracking-tight transition-all duration-700 ${scrolled ? 'text-lg' : 'text-xl'
                 }`}>VidEEo.ai</span>
             </Link>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
-              <Link href="#" className="hover:text-white transition-colors">Product</Link>
-              <Link href="#" className="hover:text-white transition-colors">Solutions</Link>
-              <Link href="#" className="hover:text-white transition-colors">Pricing</Link>
-              <Link href="#" className="hover:text-white transition-colors">Enterprise</Link>
+            <div className={`hidden md:flex items-center gap-8 text-sm font-medium transition-all duration-700 ${scrolled ? 'opacity-100 scale-95' : 'opacity-100 scale-100'
+              }`}>
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">Product</Link>
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">Solutions</Link>
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">Pricing</Link>
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">Enterprise</Link>
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-sm font-medium text-white/60 hover:text-white">Log In</Link>
+            <Link href="#" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Log In</Link>
             <Link href="/dashboard" className={`bg-white text-black rounded-full font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
               }`}>
               Try VidEEo.ai
