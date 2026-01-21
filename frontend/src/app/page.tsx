@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
+import { BrandScroller, BrandScrollerReverse } from '@/components/ui/brand-scroller'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -90,17 +91,14 @@ export default function LandingPage() {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-12 border-y border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase mb-8">Trusted by Innovative Teams</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-8 grayscale opacity-40 hover:opacity-100 transition-opacity">
-            <span className="text-xl font-bold">ACME Corp</span>
-            <span className="text-xl font-bold italic">Nebula</span>
-            <span className="text-xl font-bold tracking-widest">TESSERACT</span>
-            <span className="text-xl font-bold lowercase">vertex</span>
-            <span className="text-xl font-bold">Orbital</span>
-            <span className="text-xl font-bold tracking-tight">Quantum</span>
-          </div>
+      <section className="py-24 border-y border-white/5 bg-black overflow-hidden relative">
+        <div className="absolute inset-0 bg-yellow-500/5 blur-[120px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10">
+          <p className="text-center text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">Trusted by Innovative Teams</p>
+        </div>
+        <div className="flex flex-col gap-12 relative z-10">
+          <BrandScroller />
+          <BrandScrollerReverse />
         </div>
       </section>
 
