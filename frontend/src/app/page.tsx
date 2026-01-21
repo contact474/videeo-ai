@@ -20,12 +20,13 @@ export default function LandingPage() {
     <div className="min-h-screen bg-black text-white selection:bg-yellow-500/30">
       {/* Navbar */}
       <nav className={`fixed inset-x-0 mx-auto z-50 transition-all duration-700 ease-in-out ${scrolled
-          ? 'top-6 max-w-[920px] rounded-full border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-[95%]'
-          : 'top-0 max-w-full border-b border-transparent bg-transparent backdrop-blur-none w-full'
+        ? 'top-6 max-w-[920px] rounded-full border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-[95%]'
+        : 'top-0 max-w-full border-b border-transparent bg-transparent backdrop-blur-none w-full'
         }`}>
-        <div className={`mx-auto transition-all duration-700 flex items-center justify-between ${scrolled ? 'h-14 px-8' : 'h-20 px-8 max-w-7xl'
+        <div className={`relative mx-auto transition-all duration-700 flex items-center justify-between ${scrolled ? 'h-14 px-8' : 'h-20 px-8 max-w-7xl'
           }`}>
-          <div className="flex items-center gap-12">
+          {/* Logo */}
+          <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <div className={`transition-all duration-700 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors ${scrolled ? 'w-6 h-6' : 'w-8 h-8 bg-white'
                 }`}>
@@ -35,14 +36,18 @@ export default function LandingPage() {
               <span className={`font-bold tracking-tight transition-all duration-700 ${scrolled ? 'text-lg' : 'text-xl'
                 }`}>VidEEo.ai</span>
             </Link>
-            <div className={`hidden md:flex items-center gap-8 text-sm font-medium transition-all duration-700 ${scrolled ? 'opacity-100 scale-95' : 'opacity-100 scale-100'
-              }`}>
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">Product</Link>
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">Solutions</Link>
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">Pricing</Link>
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">Enterprise</Link>
-            </div>
           </div>
+
+          {/* Centered Navigation Links */}
+          <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium transition-all duration-700 ${scrolled ? 'opacity-100 scale-95' : 'opacity-100 scale-100'
+            }`}>
+            <Link href="#" className="text-white/60 hover:text-white transition-colors">Product</Link>
+            <Link href="#" className="text-white/60 hover:text-white transition-colors">Solutions</Link>
+            <Link href="#" className="text-white/60 hover:text-white transition-colors">Pricing</Link>
+            <Link href="#" className="text-white/60 hover:text-white transition-colors">Enterprise</Link>
+          </div>
+
+          {/* Right Actions */}
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Log In</Link>
             <Link href="/dashboard" className={`bg-white text-black rounded-full font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
