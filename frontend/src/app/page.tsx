@@ -417,47 +417,55 @@ export default function LandingPage() {
 
       {/* Enhanced Footer */}
       <footer className="pt-32 pb-12 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-12 gap-y-16 gap-x-8 mb-32">
-          <div className="col-span-full md:col-span-4">
-            <div className="flex items-center mb-8 -mt-2">
-              <Image
-                src="/logo.png"
-                alt="VidEEo.ai"
-                width={180}
-                height={48}
-              />
+        <div className="max-w-7xl mx-auto px-6 mb-32">
+          <div className="flex flex-col md:flex-row justify-between gap-16">
+            {/* Logo and Description */}
+            <div className="flex-1 max-w-sm">
+              <div className="flex items-center mb-8 h-6">
+                <Image
+                  src="/logo.png"
+                  alt="VidEEo.ai"
+                  width={160}
+                  height={42}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-white/40 text-sm leading-relaxed max-w-[280px]">
+                Empowering creators and businesses to tell stories through the power of generative AI.
+              </p>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-[240px]">
-              Empowering creators and businesses to tell stories through the power of generative AI.
-            </p>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold mb-8 text-white">Product</h4>
-            <ul className="space-y-4 text-sm text-white/40">
-              <li><Link href="#" className="hover:text-white transition-colors">Features</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
-            </ul>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold mb-8 text-white">Company</h4>
-            <ul className="space-y-4 text-sm text-white/40">
-              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-            </ul>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold mb-8 text-white">Resources</h4>
-            <ul className="space-y-4 text-sm text-white/40">
-              <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Community</Link></li>
-            </ul>
-          </div>
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold mb-8 text-white">Legal</h4>
-            <ul className="space-y-4 text-sm text-white/40">
-              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-            </ul>
+
+            {/* Links Columns */}
+            <div className="flex gap-16 lg:gap-24">
+              <div className="min-w-[100px]">
+                <h4 className="font-bold mb-8 text-xs uppercase tracking-widest text-white">Product</h4>
+                <ul className="space-y-4 text-xs text-white/40 font-medium">
+                  <li><Link href="#" className="hover:text-white transition-colors">Features</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
+                </ul>
+              </div>
+              <div className="min-w-[100px]">
+                <h4 className="font-bold mb-8 text-xs uppercase tracking-widest text-white">Company</h4>
+                <ul className="space-y-4 text-xs text-white/40 font-medium">
+                  <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+                </ul>
+              </div>
+              <div className="min-w-[100px]">
+                <h4 className="font-bold mb-8 text-xs uppercase tracking-widest text-white">Resources</h4>
+                <ul className="space-y-4 text-xs text-white/40 font-medium">
+                  <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">Community</Link></li>
+                </ul>
+              </div>
+              <div className="min-w-[100px]">
+                <h4 className="font-bold mb-8 text-xs uppercase tracking-widest text-white">Legal</h4>
+                <ul className="space-y-4 text-xs text-white/40 font-medium">
+                  <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                  <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
