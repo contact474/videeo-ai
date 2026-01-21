@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { Play, Mic, Video, Layers, CheckCircle } from 'lucide-react'
+import { Play, Mic, Video, Layers, CheckCircle, ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
   return (
@@ -245,19 +245,195 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-20 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white/10 rounded flex items-center justify-center"><Play className="w-4 h-4 text-white fill-current" /></div>
-            <span className="text-xl font-bold">VidEEo.ai</span>
+      {/* Social Tools Section */}
+      <section className="py-32 relative overflow-hidden bg-black">
+        {/* Subtle Grid Background */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-widest uppercase text-yellow-500 mb-8 italic">
+            — Social Tools —
           </div>
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8">
+            Powerful tool for<br />
+            boosting social media <span className="text-yellow-500">growth</span>
+          </h2>
+          <p className="max-w-2xl mx-auto text-white/40 mb-12">
+            Produce unlimited short videos simultaneously with automatic generation of captions, effects, backgrounds, and music.
+          </p>
+          <Link href="/dashboard" className="inline-flex items-center gap-2 bg-yellow-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-400 transition-all active:scale-95 mb-24 shadow-[0_10px_40px_rgba(234,179,8,0.2)]">
+            Try now <ChevronRight className="w-4 h-4" />
+          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 text-left">
+            {[
+              { platform: 'Instagram Reels', desc: 'Transform Instagram Reels into engaging content by adding gameplay to captivate viewers.', icon: <span className="text-3xl">📸</span> },
+              { platform: 'Tiktok Videos', desc: 'Elevate your TikTok videos by adding gameplay to create captivating and entertaining content.', icon: <span className="text-3xl">♪</span> },
+              { platform: 'Youtube Shorts', desc: 'Enhance your YouTube Shorts by adding gameplay to create dynamic and engaging content.', icon: <span className="text-3xl">▶</span> },
+              { platform: 'Facebook Reels', desc: 'Transform Facebook Reels into engaging content by adding gameplay to captivate viewers.', icon: <span className="text-3xl">f</span> },
+              { platform: 'Twitter (X) videos', desc: 'Enhance your X videos by incorporating gameplay to grab attention and keep viewers hooked.', icon: <span className="text-3xl">𝕏</span> },
+              { platform: 'Thread Videos', desc: 'Boost your Thread videos with gameplay! Engaging visuals captivate viewers and enhance your content.', icon: <span className="text-3xl">@</span> },
+            ].map((tool, i) => (
+              <div key={tool.platform} className="group border-l border-white/5 pl-8 py-4 hover:border-yellow-500/50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                  {tool.icon}
+                </div>
+                {/* Visual Line Decor */}
+                <div className="flex gap-1.5 mb-6">
+                  <div className="w-12 h-0.5 bg-white/10" />
+                  <div className="w-4 h-0.5 bg-white/10" />
+                </div>
+                <h3 className="text-lg font-bold mb-4">{tool.platform}</h3>
+                <p className="text-white/40 text-sm leading-relaxed max-w-[280px]">{tool.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-32 bg-black border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-widest uppercase text-yellow-500 mb-8 italic">
+              • Testimonials •
+            </div>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 italic">What our creators say</h2>
+            <p className="max-w-2xl mx-auto text-white/40">
+              Discover how thousands of teams streamline their operations with Videeo.ai.
+            </p>
+          </div>
+
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {[
+              { text: "The AI script generation is scary good. It understands hooks and retention better than most human copywriters I've worked with.", name: "Bilal Ahmed", role: "Agency Founder", color: "bg-white/5" },
+              { text: "We scaled our ad testing velocity by 10x using Videeo.ai. The ability to iterate on video creatives instantly is a competitive advantage.", name: "Aliza Khan", role: "Growth Marketer", color: "bg-yellow-500/5 border-yellow-500/10" },
+              { text: "The ROI on this tool is insane. We replaced our expensive outsourcing workflow with a single Videeo.ai subscription.", name: "Sana Sheikh", role: "Marketing VP", color: "bg-white/5" },
+              { text: "I was skeptical about AI voices, but Videeo.ai's narrators are indistinguishable from real voice actors. Game changer.", name: "Saman Malik", role: "Social Media Manager", color: "bg-white/5" },
+              { text: "One prompt and I have a production-ready video for TikTok, Reels, and Shorts. It's like having a full studio in my pocket.", name: "Omar Raza", role: "E-commerce CEO", color: "bg-white/5" },
+              { text: "Our engagement rates on Instagram have tripled since we started using the generated captions and dynamic visual effects.", name: "Hassan Ali", role: "Influencer", color: "bg-white/5" },
+            ].map((t, i) => (
+              <div key={i} className={`break-inside-avoid p-8 rounded-3xl border border-white/10 ${t.color}`}>
+                <p className="text-lg font-medium leading-relaxed mb-8">"{t.text}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold ring-2 ring-yellow-500/20">
+                    {t.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold">{t.name}</div>
+                    <div className="text-[10px] font-bold text-yellow-500/60 uppercase tracking-wider">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Showcase Section */}
+      <section className="py-32 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">See what marketers are creating.</h2>
+            <p className="text-white/40">From social clips to full ad campaigns, see the range of possibilities with Videeo.ai.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Luxury Real Estate Tour", tag: "REAL ESTATE", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" },
+              { title: "Travel Vlog Highlights", tag: "LIFESTYLE", img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800" },
+              { title: "Fitness Motivation Series", tag: "HEALTH", img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800" }
+            ].map((v, i) => (
+              <div key={i} className="group relative aspect-video rounded-3xl overflow-hidden border border-white/10">
+                <img src={v.img} alt={v.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-50" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-6 h-6 text-white fill-current" />
+                  </div>
+                </div>
+                <div className="absolute bottom-8 left-8">
+                  <div className="text-[10px] font-bold text-yellow-500 tracking-widest mb-2">{v.tag}</div>
+                  <h3 className="text-xl font-bold">{v.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-32 bg-black px-6">
+        <div className="max-w-5xl mx-auto p-12 md:p-24 rounded-[40px] border border-white/10 bg-gradient-to-br from-yellow-500/10 via-black to-black relative overflow-hidden text-center">
+          {/* Glowing bits */}
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
+
+          <h2 className="relative z-10 text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
+            Experience the <span className="text-yellow-500 shadow-yellow-500/50">Magic</span>
+          </h2>
+          <p className="relative z-10 max-w-xl mx-auto text-white/60 mb-12 text-lg">
+            Create endless short videos simultaneously with automatic captions, effects, backgrounds, and music.
+          </p>
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/dashboard" className="w-[180px] bg-yellow-500 text-black py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 shadow-[0_10px_40px_rgba(234,179,8,0.3)]">
+              Try now <ChevronRight className="w-4 h-4" />
+            </Link>
+            <button className="w-[180px] bg-white/5 border border-white/10 text-white py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
+              Learn more
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Footer */}
+      <footer className="pt-32 pb-12 border-t border-white/5 bg-black">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-12 gap-y-16 gap-x-8 mb-32">
+          <div className="col-span-full md:col-span-4">
+            <div className="flex items-center gap-2 mb-8">
+              <div className="w-8 h-8 bg-white/10 rounded flex items-center justify-center"><Play className="w-4 h-4 text-white fill-current" /></div>
+              <span className="text-xl font-bold">VidEEo.ai</span>
+            </div>
+            <p className="text-white/40 text-sm leading-relaxed max-w-[240px]">
+              Empowering creators and businesses to tell stories through the power of generative AI.
+            </p>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold mb-8 text-white">Product</h4>
+            <ul className="space-y-4 text-sm text-white/40">
+              <li><Link href="#" className="hover:text-white transition-colors">Features</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Pricing</Link></li>
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold mb-8 text-white">Company</h4>
+            <ul className="space-y-4 text-sm text-white/40">
+              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold mb-8 text-white">Resources</h4>
+            <ul className="space-y-4 text-sm text-white/40">
+              <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Community</Link></li>
+            </ul>
+          </div>
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold mb-8 text-white">Legal</h4>
+            <ul className="space-y-4 text-sm text-white/40">
+              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            </ul>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <p className="text-sm text-white/20 font-medium">© 2026 VidEEo.ai. All rights reserved.</p>
           <div className="flex gap-12 text-sm text-white/40 font-medium">
             <Link href="#" className="hover:text-white transition-colors">Twitter</Link>
             <Link href="#" className="hover:text-white transition-colors">GitHub</Link>
             <Link href="#" className="hover:text-white transition-colors">Instagram</Link>
           </div>
-          <p className="text-sm text-white/20 font-medium">© 2026 VidEEo.ai. All rights reserved.</p>
         </div>
       </footer>
     </div>
