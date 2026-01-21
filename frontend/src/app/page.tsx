@@ -435,11 +435,29 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="md:col-span-5 bg-[#111] border border-white/10 rounded-3xl p-12 flex flex-col items-center justify-center text-center">
-              <div className="w-20 h-20 rounded-3xl bg-white flex items-center justify-center shadow-[0_20px_60px_rgba(255,255,255,0.15)] mb-8">
-                <Play className="w-10 h-10 text-black fill-current" />
+            <div className="md:col-span-5 bg-[#111] border border-white/10 rounded-3xl p-12 flex flex-col items-center justify-center text-center relative overflow-hidden group">
+              {/* Horizontal Line behind button */}
+              <div className="absolute top-1/2 left-0 right-0 -translate-y-[40px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent scale-x-50 group-hover:scale-x-75 transition-transform duration-700" />
+
+              {/* Glow effect */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-24 w-40 h-40 bg-yellow-500/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-yellow-500/20 transition-colors duration-700" />
+
+              {/* Central Button */}
+              <div className="relative mb-8">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500 border-2 border-yellow-300/20">
+                  <svg className="w-9 h-9 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    <circle cx="18" cy="6" r="2" />
+                  </svg>
+                </div>
+                {/* Animated Ring */}
+                <div className="absolute inset-0 rounded-full border border-yellow-500/30 animate-ping opacity-20" style={{ animationDuration: '3s' }} />
               </div>
-              <h3 className="text-3xl font-bold leading-tight">Your AI-powered video creator</h3>
+
+              <h3 className="text-3xl font-bold leading-tight relative z-10">
+                Your AI-powered<br />
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">video creator</span>
+              </h3>
             </div>
 
             <div className="md:col-span-3 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col">
