@@ -1,21 +1,39 @@
 "use client"
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
 
 export default function LandingPage() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-black text-white selection:bg-yellow-500/30">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <nav className={`fixed z-50 transition-all duration-500 ease-in-out ${scrolled
+          ? 'top-6 left-1/2 -translate-x-1/2 w-fit min-w-[800px] rounded-full border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+          : 'top-0 left-0 w-full border-b border-white/5 bg-black/60 backdrop-blur-xl'
+        }`}>
+        <div className={`max-w-7xl mx-auto transition-all duration-500 flex items-center justify-between ${scrolled ? 'h-14 px-8' : 'h-20 px-6'
+          }`}>
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors">
-                <Play className="w-5 h-5 text-black fill-current" />
+              <div className={`transition-all duration-500 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors ${scrolled ? 'w-6 h-6' : 'w-8 h-8 bg-white'
+                }`}>
+                <Play className={`transition-all duration-500 ${scrolled ? 'w-3 h-3 text-white' : 'w-5 h-5 text-black'
+                  } fill-current`} />
               </div>
-              <span className="text-xl font-bold tracking-tight">VidEEo.ai</span>
+              <span className={`font-bold tracking-tight transition-all duration-500 ${scrolled ? 'text-lg' : 'text-xl'
+                }`}>VidEEo.ai</span>
             </Link>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
               <Link href="#" className="hover:text-white transition-colors">Product</Link>
@@ -26,7 +44,8 @@ export default function LandingPage() {
           </div>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm font-medium text-white/60 hover:text-white">Log In</Link>
-            <Link href="/dashboard" className="bg-white text-black px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-yellow-400 transition-all active:scale-95">
+            <Link href="/dashboard" className={`bg-white text-black rounded-full font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
+              }`}>
               Try VidEEo.ai
             </Link>
           </div>
