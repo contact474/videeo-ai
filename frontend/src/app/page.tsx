@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
-import { BrandScroller, BrandScrollerReverse } from '@/components/ui/brand-scroller'
+import { BrandScroller } from '@/components/ui/brand-scroller'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -96,9 +96,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10">
           <p className="text-center text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">Trusted by Innovative Teams</p>
         </div>
-        <div className="flex flex-col gap-12 relative z-10">
+        <div className="flex flex-col relative z-10">
           <BrandScroller />
-          <BrandScrollerReverse />
         </div>
       </section>
 
