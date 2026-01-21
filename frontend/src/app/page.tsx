@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
+import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { BrandScroller } from '@/components/ui/brand-scroller'
 import TestimonialV2 from '@/components/ui/testimonial-v2'
 
@@ -112,13 +113,54 @@ export default function LandingPage() {
             Current tools require multi-step workflows, separate editors, and technical skills.
             <span className="text-white"> VidEEo.ai eliminates the entire production pipeline.</span> We deliver finished, production-ready output from a single chat prompt.
           </p>
-          <div className="inline-flex flex-wrap justify-center gap-3 p-2 bg-white/5 border border-white/10 rounded-2xl">
-            {['AI Voice', 'AI Backgrounds', 'AI Script Generator'].map((tag) => (
-              <div key={tag} className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 text-sm font-semibold">
-                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" /> {tag}
-              </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-flex flex-wrap justify-center items-center gap-3 p-2 bg-white/5 border border-white/10 rounded-2xl relative"
+          >
+            {['AI Voice', 'AI Backgrounds', 'AI Script Generator'].map((tag, i) => (
+              <React.Fragment key={tag}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + (i * 0.2), duration: 0.5 }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
+                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 text-sm font-bold tracking-tight text-white/80 border border-white/5 transition-colors relative group overflow-hidden"
+                >
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.5, 1, 0.5]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.6
+                    }}
+                    className="w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]"
+                  />
+                  {tag}
+                  {/* Subtle sweep animation */}
+                  <motion.div
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: i * 1, ease: "linear" }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
+                  />
+                </motion.div>
+                {i < 2 && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 0.3, scale: 1 }}
+                    transition={{ delay: 0.7 + (i * 0.2) }}
+                  >
+                    <ArrowRight className="w-4 h-4 text-white/40" />
+                  </motion.div>
+                )}
+              </React.Fragment>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
