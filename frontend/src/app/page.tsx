@@ -118,45 +118,57 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex flex-wrap justify-center items-center gap-3 p-2 bg-white/5 border border-white/10 rounded-2xl relative"
+            className="inline-flex flex-wrap justify-center items-center gap-4 p-3 bg-gradient-to-r from-white/[0.03] via-white/[0.05] to-white/[0.03] border border-white/10 rounded-[28px] relative backdrop-blur-sm"
           >
-            {['AI Voice', 'AI Backgrounds', 'AI Script Generator'].map((tag, i) => (
-              <React.Fragment key={tag}>
+            {[
+              { name: 'AI Voice', icon: Mic },
+              { name: 'AI Backgrounds', icon: Play },
+              { name: 'AI Script Generator', icon: CheckCircle }
+            ].map((feature, i) => (
+              <React.Fragment key={feature.name}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + (i * 0.2), duration: 0.5 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-                  className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 text-sm font-bold tracking-tight text-white/80 border border-white/5 transition-colors relative group overflow-hidden"
+                  transition={{ delay: 0.5 + (i * 0.15), duration: 0.5 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-center gap-3 px-5 py-3.5 rounded-[20px] bg-gradient-to-br from-white/[0.08] to-white/[0.03] text-base font-bold tracking-tight text-white border border-white/10 transition-all relative group overflow-hidden shadow-lg"
                 >
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.5, 1, 0.5]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: i * 0.6
-                    }}
-                    className="w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]"
-                  />
-                  {tag}
+                  {/* Icon with background */}
+                  <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0 relative z-10">
+                    <feature.icon className="w-5 h-5 text-white" strokeWidth={2.5} />
+                  </div>
+
+                  {/* Text */}
+                  <span className="relative z-10">{feature.name}</span>
+
                   {/* Subtle sweep animation */}
                   <motion.div
                     animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: i * 1, ease: "linear" }}
+                    transition={{ duration: 4, repeat: Infinity, delay: i * 1.3, ease: "linear" }}
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
                   />
                 </motion.div>
+
+                {/* Diamond separator */}
                 {i < 2 && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 0.3, scale: 1 }}
-                    transition={{ delay: 0.7 + (i * 0.2) }}
-                  >
-                    <ArrowRight className="w-4 h-4 text-white/40" />
-                  </motion.div>
+                    initial={{ opacity: 0, rotate: 0 }}
+                    whileInView={{ opacity: 1, rotate: 45 }}
+                    animate={{
+                      scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                      opacity: { delay: 0.6 + (i * 0.15), duration: 0.4 },
+                      rotate: { delay: 0.6 + (i * 0.15), duration: 0.4 },
+                      scale: {
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: i * 0.7,
+                        ease: "easeInOut"
+                      }
+                    }}
+                    className="w-2 h-2 bg-gradient-to-br from-yellow-400 to-orange-500 shadow-[0_0_12px_rgba(234,179,8,0.6)]"
+                  />
                 )}
               </React.Fragment>
             ))}
