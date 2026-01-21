@@ -244,10 +244,10 @@ export default function LandingPage() {
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 aspect-square relative overflow-hidden flex flex-col justify-center">
                 {/* Video Orientation Section */}
-                <div className="mb-8">
-                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">VIDEO ORIENTATION</div>
+                <div className="mb-5">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-3">VIDEO ORIENTATION</div>
                   <div className="relative">
-                    <select className="w-full p-5 bg-black/60 border border-white/10 rounded-2xl text-base text-white appearance-none cursor-pointer backdrop-blur-sm pr-12 font-medium">
+                    <select className="w-full p-4 bg-black/60 border border-white/10 rounded-2xl text-base text-white appearance-none cursor-pointer backdrop-blur-sm pr-12 font-medium">
                       <option>16:9 Landscape (YouTube)</option>
                       <option>9:16 Portrait (TikTok)</option>
                       <option>1:1 Square (Instagram)</option>
@@ -257,8 +257,8 @@ export default function LandingPage() {
                 </div>
 
                 {/* Background Selection Section */}
-                <div className="mb-8">
-                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">SELECT BACKGROUND</div>
+                <div className="mb-5">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-3">SELECT BACKGROUND</div>
                   <BackgroundSelector
                     images={[
                       'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
@@ -272,16 +272,16 @@ export default function LandingPage() {
 
                 {/* Background Sound Section */}
                 <div>
-                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">BACKGROUND SOUND</div>
-                  <div className="p-5 bg-gradient-to-br from-yellow-500/10 to-orange-500/5 border border-yellow-500/20 rounded-2xl flex items-center justify-between backdrop-blur-sm shadow-[0_0_20px_rgba(234,179,8,0.1)]">
+                  <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-3">BACKGROUND SOUND</div>
+                  <div className="p-4 bg-gradient-to-br from-yellow-500/10 to-orange-500/5 border border-yellow-500/20 rounded-2xl flex items-center justify-between backdrop-blur-sm shadow-[0_0_20px_rgba(234,179,8,0.1)]">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center shrink-0">
-                        <Mic className="w-6 h-6 text-black" strokeWidth={2.5} />
+                      <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center shrink-0">
+                        <Mic className="w-5 h-5 text-black" strokeWidth={2.5} />
                       </div>
-                      <span className="text-base font-bold text-yellow-500">Deep Ocean</span>
+                      <span className="text-sm font-bold text-yellow-500">Deep Ocean</span>
                     </div>
-                    <div className="flex-1 max-w-[200px] ml-6">
-                      <div className="h-2 bg-black/30 rounded-full overflow-hidden">
+                    <div className="flex-1 max-w-[150px] ml-4">
+                      <div className="h-1.5 bg-black/30 rounded-full overflow-hidden">
                         <motion.div
                           className="h-full bg-gradient-to-r from-yellow-500 to-yellow-400"
                           initial={{ width: '0%' }}
