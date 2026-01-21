@@ -27,14 +27,14 @@ export default function LandingPage() {
           }`}>
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className={`transition-all duration-700 rounded-lg flex items-center justify-center group-hover:bg-yellow-500 transition-colors ${scrolled ? 'w-6 h-6' : 'w-8 h-8 bg-white'
-                }`}>
-                <Play className={`transition-all duration-700 ${scrolled ? 'w-3 h-3 text-white' : 'w-5 h-5 text-black'
-                  } fill-current`} />
-              </div>
-              <span className={`font-bold tracking-tight transition-all duration-700 ${scrolled ? 'text-lg' : 'text-xl'
-                }`}>VidEEo.ai</span>
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/logo.png"
+                alt="VidEEo.ai"
+                width={scrolled ? 120 : 150}
+                height={scrolled ? 32 : 40}
+                className="transition-all duration-700"
+              />
             </Link>
           </div>
 
@@ -419,9 +419,13 @@ export default function LandingPage() {
       <footer className="pt-32 pb-12 border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-12 gap-y-16 gap-x-8 mb-32">
           <div className="col-span-full md:col-span-4">
-            <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 bg-white/10 rounded flex items-center justify-center"><Play className="w-4 h-4 text-white fill-current" /></div>
-              <span className="text-xl font-bold">VidEEo.ai</span>
+            <div className="flex items-center mb-8">
+              <Image
+                src="/logo.png"
+                alt="VidEEo.ai"
+                width={180}
+                height={48}
+              />
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-[240px]">
               Empowering creators and businesses to tell stories through the power of generative AI.
