@@ -193,7 +193,7 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 min-h-[520px] relative overflow-hidden group">
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 aspect-square relative overflow-hidden group flex flex-col justify-center">
                 {/* Header */}
                 <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-8">ENTER YOUR STORY TOPIC</div>
 
@@ -242,7 +242,7 @@ export default function LandingPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 min-h-[520px] relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 rounded-[32px] p-10 aspect-square relative overflow-hidden flex flex-col justify-center">
                 {/* Video Orientation Section */}
                 <div className="mb-8">
                   <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-4">VIDEO ORIENTATION</div>
