@@ -419,7 +419,7 @@ export default function LandingPage() {
       <footer className="pt-32 pb-12 border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-12 gap-y-16 gap-x-8 mb-32">
           <div className="col-span-full md:col-span-4">
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-8 -mt-2">
               <Image
                 src="/logo.png"
                 alt="VidEEo.ai"
