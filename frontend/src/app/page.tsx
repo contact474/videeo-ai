@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Play, Mic, Layers, CheckCircle, ChevronRight } from 'lucide-react'
 import { BrandScroller } from '@/components/ui/brand-scroller'
+import TestimonialV2 from '@/components/ui/testimonial-v2'
 
 export default function LandingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -312,44 +313,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-32 bg-black border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-widest uppercase text-yellow-500 mb-8 italic">
-              • Testimonials •
-            </div>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 italic">What our creators say</h2>
-            <p className="max-w-2xl mx-auto text-white/40">
-              Discover how thousands of teams streamline their operations with Videeo.ai.
-            </p>
-          </div>
-
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {[
-              { text: "The AI script generation is scary good. It understands hooks and retention better than most human copywriters I've worked with.", name: "Bilal Ahmed", role: "Agency Founder", color: "bg-white/5" },
-              { text: "We scaled our ad testing velocity by 10x using Videeo.ai. The ability to iterate on video creatives instantly is a competitive advantage.", name: "Aliza Khan", role: "Growth Marketer", color: "bg-yellow-500/5 border-yellow-500/10" },
-              { text: "The ROI on this tool is insane. We replaced our expensive outsourcing workflow with a single Videeo.ai subscription.", name: "Sana Sheikh", role: "Marketing VP", color: "bg-white/5" },
-              { text: "I was skeptical about AI voices, but Videeo.ai's narrators are indistinguishable from real voice actors. Game changer.", name: "Saman Malik", role: "Social Media Manager", color: "bg-white/5" },
-              { text: "One prompt and I have a production-ready video for TikTok, Reels, and Shorts. It's like having a full studio in my pocket.", name: "Omar Raza", role: "E-commerce CEO", color: "bg-white/5" },
-              { text: "Our engagement rates on Instagram have tripled since we started using the generated captions and dynamic visual effects.", name: "Hassan Ali", role: "Influencer", color: "bg-white/5" },
-            ].map((t, i) => (
-              <div key={i} className={`break-inside-avoid p-8 rounded-3xl border border-white/10 ${t.color}`}>
-                <p className="text-lg font-medium leading-relaxed mb-8">&quot;{t.text}&quot;</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold ring-2 ring-yellow-500/20">
-                    {t.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold">{t.name}</div>
-                    <div className="text-[10px] font-bold text-yellow-500/60 uppercase tracking-wider">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialV2 />
 
       {/* Showcase Section */}
       <section className="py-32 bg-black">
