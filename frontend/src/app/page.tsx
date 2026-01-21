@@ -48,7 +48,7 @@ export default function LandingPage() {
           </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
             One prompt to a<br />
-            <span className="text-yellow-500 tracking-[-0.05em]">perfect video.</span>
+            <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent tracking-[-0.05em]">perfect video.</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 font-medium mb-12 leading-relaxed">
             The fastest way for businesses to turn ideas into viral short-form videos. No editing needed.
@@ -108,7 +108,7 @@ export default function LandingPage() {
             </div>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-4">
               Turn ideas into<br />
-              <span className="text-yellow-500">short videos in seconds.</span>
+              <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent">short videos in seconds.</span>
             </h2>
           </div>
 
@@ -176,7 +176,7 @@ export default function LandingPage() {
             </div>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
               Your go-to tool for crafting<br />
-              <span className="text-yellow-500">viral Shorts using AI.</span>
+              <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent">viral Shorts using AI.</span>
             </h2>
           </div>
 
@@ -256,7 +256,7 @@ export default function LandingPage() {
           </div>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-8">
             Powerful tool for<br />
-            boosting social media <span className="text-yellow-500">growth</span>
+            boosting social media <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent">growth</span>
           </h2>
           <p className="max-w-2xl mx-auto text-white/40 mb-12">
             Produce unlimited short videos simultaneously with automatic generation of captions, effects, backgrounds, and music.
@@ -374,7 +374,7 @@ export default function LandingPage() {
           <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
 
           <h2 className="relative z-10 text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
-            Experience the <span className="text-yellow-500 shadow-yellow-500/50">Magic</span>
+            Experience the <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent">Magic</span>
           </h2>
           <p className="relative z-10 max-w-xl mx-auto text-white/60 mb-12 text-lg">
             Create endless short videos simultaneously with automatic captions, effects, backgrounds, and music.
