@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 // --- Types ---
 interface Testimonial {
@@ -19,54 +20,63 @@ const testimonials: Testimonial[] = [
         initials: "BA",
         name: "Bilal Ahmed",
         role: "AGENCY FOUNDER",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "The ROI on this tool is insane. We replaced our expensive outsourcing workflow with a single VidEEo.ai subscription.",
         initials: "SS",
         name: "Sana Sheikh",
         role: "MARKETING VP",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "One prompt and I have a production-ready video for TikTok, Reels, and Shorts. It's like having a full studio in my pocket.",
         initials: "OR",
         name: "Omar Raza",
         role: "E-COMMERCE CEO",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "We scaled our ad testing velocity by 10x using VidEEo.ai. The ability to iterate on video creatives instantly is a competitive advantage.",
         initials: "BA",
         name: "Brian Adams",
         role: "AD OPS LEAD",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "I was skeptical about AI voices, but VidEEo.ai's narrators are indistinguishable from real voice actors. Game changer.",
         initials: "ZK",
         name: "Zain Khan",
         role: "CONTENT CREATOR",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "Our engagement rates on Instagram have tripled since we started using the generated captions and dynamic visual effects.",
         initials: "LH",
         name: "Lisa Huang",
         role: "SOCIAL MEDIA STRATEGIST",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "The workflow is so intuitive. From prompt to final render, it takes less than 5 minutes to create high-performing video content.",
         initials: "MK",
         name: "Mustafa Kamal",
         role: "STARTUP FOUNDER",
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "Finally, an AI tool that actually delivers on its promise. The lip-sync is perfect and the quality is industry-standard.",
         initials: "AD",
         name: "Aliza Dawn",
         role: "VIDEO EDITOR",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
     },
     {
         text: "VidEEo.ai has completely transformed how we handle our video ads. The speed and quality are simply unmatched in the market.",
         initials: "HS",
         name: "Hassan Syed",
         role: "PERFORMANCE MARKETER",
+        image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=150&auto=format&fit=crop"
     },
 ];
 
@@ -97,7 +107,7 @@ const TestimonialsColumn = (props: {
                 {[
                     ...new Array(2).fill(0).map((_, index) => (
                         <React.Fragment key={index}>
-                            {props.testimonials.map(({ text, initials, name, role }, i) => (
+                            {props.testimonials.map(({ text, initials, name, role, image }, i) => (
                                 <motion.li
                                     key={`${index}-${i}`}
                                     aria-hidden={index === 1 ? "true" : "false"}
@@ -114,8 +124,17 @@ const TestimonialsColumn = (props: {
                                             &quot;{text}&quot;
                                         </p>
                                         <footer className="flex items-center gap-4 mt-8">
-                                            <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-bold text-xs shrink-0">
-                                                {initials}
+                                            <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 font-bold text-xs shrink-0 overflow-hidden relative">
+                                                {image ? (
+                                                    <Image
+                                                        src={image}
+                                                        alt={name}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                ) : (
+                                                    initials
+                                                )}
                                             </div>
                                             <div className="flex flex-col">
                                                 <cite className="font-bold not-italic tracking-tight leading-5 text-white">
