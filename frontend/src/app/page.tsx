@@ -578,14 +578,41 @@ export default function LandingPage() {
             </div>
 
 
-            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[400px]">
-              <div className="max-w-[200px] text-white/20 text-[10px] font-mono mb-4">There lived a certain man in Russia long ago</div>
-              <div className="p-4 bg-yellow-500/5 border border-yellow-500/10 rounded-2xl mb-4">
-                <p className="text-xs font-bold text-yellow-500">Давным-давно в России жил человек.</p>
+            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[400px] relative overflow-hidden group">
+              {/* Scrolling Subtitles Container */}
+              <div className="mb-auto relative h-[280px] w-full overflow-hidden">
+                {/* Gradient Masks for Fade Effect */}
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#111] to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#111] to-transparent z-10 pointer-events-none" />
+                
+                {/* Center Highlight Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-32 bg-yellow-500/5 blur-xl rounded-full pointer-events-none" />
+
+                <motion.div
+                  animate={{ y: ["0%", "-50%"] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="flex flex-col gap-4 py-4"
+                >
+                  {[
+                    { text: "There lived a certain man in Russia long ago", lang: "English" },
+                    { text: "Давным-давно в России жил человек.", lang: "Russian", highlight: true },
+                    { text: "很久以前, 在俄罗斯有一个人.", lang: "Chinese" },
+                    { text: "Vivía cierto hombre en Rusia hace mucho tiempo", lang: "Spanish" },
+                    { text: "昔々、ロシアにある男が住んでいました", lang: "Japanese" },
+                    // Duplicate
+                    { text: "There lived a certain man in Russia long ago", lang: "English" },
+                    { text: "Давным-давно в России жил человек.", lang: "Russian", highlight: true },
+                    { text: "很久以前, 在俄罗斯有一个人.", lang: "Chinese" },
+                    { text: "Vivía cierto hombre en Rusia hace mucho tiempo", lang: "Spanish" },
+                    { text: "昔々、ロシアにある男が住んでいました", lang: "Japanese" },
+                  ].map((item, i) => (
+                    <div key={i} className={`p-4 rounded-2xl border backdrop-blur-sm text-center transition-colors ${item.highlight ? 'border-yellow-500/30 bg-yellow-500/10 shadow-[0_0_20px_rgba(234,179,8,0.1)]' : 'border-white/5 bg-white/5'}`}>
+                      <p className={`text-sm font-medium ${item.highlight ? 'text-yellow-500' : 'text-white/50'}`}>{item.text}</p>
+                    </div>
+                  ))}
+                </motion.div>
               </div>
-              <div className="max-w-[150px] p-2 bg-white/5 border border-white/10 rounded-xl text-[8px] text-white/30 text-center tracking-widest uppercase">
-                很久以前, 在俄罗斯有一个人.
-              </div>
+
               <h3 className="text-2xl font-bold leading-tight mt-auto mb-2">Auto Subtitle Generation.</h3>
               <p className="text-white/40 text-sm leading-relaxed">Automatically generate clear subtitles in any language, from Chinese to Russian and beyond.</p>
             </div>
