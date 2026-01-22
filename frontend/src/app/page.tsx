@@ -55,7 +55,7 @@ export default function LandingPage() {
           {/* Right Actions */}
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm font-medium text-white/60 hover:text-white transition-colors">Log In</Link>
-            <Link href="/dashboard" className={`bg-white text-black rounded-lg font-semibold hover:bg-yellow-400 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
+            <Link href="/dashboard" className={`bg-white text-black rounded-lg font-semibold hover:bg-gradient-to-r hover:from-yellow-400 hover:to-amber-500 transition-all active:scale-95 ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-5 py-2.5 text-sm'
               }`}>
               Try VidEEo.ai
             </Link>
@@ -84,7 +84,7 @@ export default function LandingPage() {
             The fastest way for businesses to turn ideas into viral short-form videos. No editing needed.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/dashboard" className="w-[220px] bg-white text-black py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center justify-center">
+            <Link href="/dashboard" className="w-[220px] bg-white text-black py-4 rounded-xl font-bold text-lg hover:bg-gradient-to-r hover:from-yellow-400 hover:to-amber-500 transition-all active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center justify-center">
               Start Creating Free
             </Link>
             <button className="w-[220px] bg-white/5 border border-white/10 text-white py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
@@ -169,7 +169,7 @@ export default function LandingPage() {
                         ease: "easeInOut"
                       }
                     }}
-                    className="w-2 h-2 bg-gradient-to-br from-yellow-400 to-orange-500 shadow-[0_0_12px_rgba(234,179,8,0.6)]"
+                    className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-amber-500 shadow-[0_0_12px_rgba(234,179,8,0.6)]"
                   />
                 )}
               </React.Fragment>
@@ -275,7 +275,7 @@ export default function LandingPage() {
                   <div className="text-xs font-bold text-white/30 tracking-[0.2em] uppercase mb-3">BACKGROUND SOUND</div>
                   <div className="p-4 bg-gradient-to-br from-yellow-500/10 to-orange-500/5 border border-yellow-500/20 rounded-2xl flex items-center justify-between backdrop-blur-sm shadow-[0_0_20px_rgba(234,179,8,0.1)]">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center shrink-0">
                         <Mic className="w-5 h-5 text-black" strokeWidth={2.5} />
                       </div>
                       <span className="text-sm font-bold text-yellow-500">Deep Ocean</span>
@@ -283,7 +283,7 @@ export default function LandingPage() {
                     <div className="flex-1 max-w-[150px] ml-4">
                       <div className="h-1.5 bg-black/30 rounded-full overflow-hidden">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-yellow-500 to-yellow-400"
+                          className="h-full bg-gradient-to-r from-yellow-400 to-amber-500"
                           initial={{ width: '0%' }}
                           animate={{ width: '70%' }}
                           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -444,7 +444,7 @@ export default function LandingPage() {
 
               {/* Central Button */}
               <div className="relative mb-8">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500 border-2 border-yellow-300/20">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center shadow-[0_0_30px_rgba(234,179,8,0.3)] relative z-10 group-hover:scale-110 transition-transform duration-500 border-2 border-yellow-300/20">
                   <svg className="w-9 h-9 text-white" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
                     <circle cx="18" cy="6" r="2" />
@@ -456,7 +456,7 @@ export default function LandingPage() {
 
               <h3 className="text-3xl font-bold leading-tight relative z-10">
                 Your AI-powered<br />
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">video creator</span>
+                <span className="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">video creator</span>
               </h3>
             </div>
 
@@ -533,7 +533,7 @@ export default function LandingPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-transparent pointer-events-none" />
 
                   {/* Play Button */}
-                  <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center shrink-0 shadow-lg shadow-yellow-500/20 group-hover/card:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center shrink-0 shadow-lg shadow-yellow-500/20 group-hover/card:scale-105 transition-transform">
                     <Play className="w-5 h-5 text-black fill-current ml-0.5" />
                   </div>
 
@@ -642,7 +642,7 @@ export default function LandingPage() {
           <p className="max-w-2xl mx-auto text-white/40 mb-12">
             Produce unlimited short videos simultaneously with automatic generation of captions, effects, backgrounds, and music.
           </p>
-          <Link href="/dashboard" className="inline-flex items-center gap-2 bg-yellow-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-400 transition-all active:scale-95 mb-24 shadow-[0_10px_40px_rgba(234,179,8,0.2)]">
+          <Link href="/dashboard" className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-8 py-4 rounded-xl font-bold hover:from-yellow-300 hover:to-amber-400 transition-all active:scale-95 mb-24 shadow-[0_10px_40px_rgba(234,179,8,0.2)]">
             Try now <ChevronRight className="w-4 h-4" />
           </Link>
 
@@ -669,7 +669,7 @@ export default function LandingPage() {
             ].map((tool) => (
               <div key={tool.platform} className="group border-l border-white/5 pl-8 py-4 hover:border-yellow-500/50 transition-colors">
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:to-amber-500 group-hover:text-black transition-all">
                     {tool.icon}
                   </div>
                   <div className="flex flex-col gap-1.5 opacity-20 group-hover:opacity-40 transition-opacity">
@@ -748,7 +748,7 @@ export default function LandingPage() {
             <div className="relative group/btn">
               {/* Glow effect for button */}
               <div className="absolute -inset-1 bg-yellow-500/20 blur-xl rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-              <Link href="/dashboard" className="relative w-[180px] bg-gradient-to-r from-yellow-400 to-yellow-600 text-black py-4 rounded-xl font-bold text-lg hover:from-yellow-300 hover:to-yellow-500 transition-all flex items-center justify-center gap-2 active:scale-95 shadow-[0_10px_30px_rgba(234,179,8,0.2)]">
+              <Link href="/dashboard" className="relative w-[180px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black py-4 rounded-xl font-bold text-lg hover:from-yellow-300 hover:to-amber-400 transition-all flex items-center justify-center gap-2 active:scale-95 shadow-[0_10px_30px_rgba(234,179,8,0.2)]">
                 Try now <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
