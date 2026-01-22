@@ -562,7 +562,7 @@ export default function LandingPage() {
                 <div className="absolute inset-0 z-20 bg-[#1a1a1a] border-2 border-white/10 rounded-2xl flex items-center justify-center shadow-2xl group-hover/cards:border-yellow-500 transition-colors duration-500">
                   {/* Inner Gradient */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-yellow-500/10 to-transparent opacity-0 group-hover/cards:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  
+
                   {/* Glow */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-500/10 blur-[50px] rounded-full pointer-events-none group-hover/cards:bg-yellow-500/20 transition-colors" />
 
@@ -584,7 +584,7 @@ export default function LandingPage() {
                 {/* Gradient Masks for Fade Effect */}
                 <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#111] to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#111] to-transparent z-10 pointer-events-none" />
-                
+
                 {/* Center Highlight Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-32 bg-yellow-500/5 blur-xl rounded-full pointer-events-none" />
 
@@ -623,7 +623,13 @@ export default function LandingPage() {
       {/* Social Tools Section */}
       <section className="py-32 relative overflow-hidden bg-black">
         <div className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+          style={{
+            backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+            maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
+          }}
+        />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-widest uppercase text-yellow-500 mb-8 italic">
