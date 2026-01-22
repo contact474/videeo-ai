@@ -465,37 +465,28 @@ export default function LandingPage() {
               <div className="absolute inset-x-0 top-0 bottom-32 overflow-hidden flex items-center justify-center">
                 {/* Scrolling Track */}
                 <motion.div
-                  animate={{ x: ["-20%", "-120%"] }}
-                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="flex gap-4 min-w-max"
                 >
-                  {[...Array(4)].map((_, groupIndex) => (
-                    <React.Fragment key={groupIndex}>
-                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
-                        <Image
-                          src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=400&h=600&fit=crop"
-                          alt="Video template" fill className="object-cover"
-                        />
-                      </div>
-                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
-                        <Image
-                          src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=600&fit=crop"
-                          alt="Video template" fill className="object-cover"
-                        />
-                      </div>
-                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
-                        <Image
-                          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop"
-                          alt="Video template" fill className="object-cover"
-                        />
-                      </div>
-                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
-                        <Image
-                          src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=400&h=600&fit=crop"
-                          alt="Video template" fill className="object-cover"
-                        />
-                      </div>
-                    </React.Fragment>
+                  {[
+                    "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=600&fit=crop",
+                    "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=600&fit=crop",
+                  ].map((src, i) => (
+                    <div key={i} className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
+                      <Image
+                        src={src}
+                        alt="Video template"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   ))}
                 </motion.div>
 
