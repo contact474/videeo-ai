@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight, Music } from 'lucide-react'
+import { Play, Mic, Layers, CheckCircle, ChevronRight, ArrowRight, Music, Instagram, Facebook, Youtube, AtSign } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BrandScroller } from '@/components/ui/brand-scroller'
 import TestimonialV2 from '@/components/ui/testimonial-v2'
@@ -648,20 +648,34 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 text-left">
             {[
-              { platform: 'Instagram Reels', desc: 'Transform Instagram Reels into engaging content by adding gameplay to captivate viewers.', icon: '📸' },
-              { platform: 'Tiktok Videos', desc: 'Elevate your TikTok videos by adding gameplay to create captivating and entertaining content.', icon: '♪' },
-              { platform: 'Youtube Shorts', desc: 'Enhance your YouTube Shorts by adding gameplay to create dynamic and engaging content.', icon: '▶' },
-              { platform: 'Facebook Reels', desc: 'Transform Facebook Reels into engaging content by adding gameplay to captivate viewers.', icon: 'f' },
-              { platform: 'Twitter (X) videos', desc: 'Enhance your X videos by incorporating gameplay to grab attention and keep viewers hooked.', icon: '𝕏' },
-              { platform: 'Thread Videos', desc: 'Boost your Thread videos with gameplay! Engaging visuals captivate viewers and enhance your content.', icon: '@' },
+              { platform: 'Instagram Reels', desc: 'Transform Instagram Reels into engaging content by adding gameplay to captivate viewers.', icon: <Instagram className="w-6 h-6" /> },
+              {
+                platform: 'Tiktok Videos', desc: 'Elevate your TikTok videos by adding gameplay to create captivating and entertaining content.', icon: (
+                  <svg viewBox="0 0 16 16" fill="currentColor" className="w-6 h-6">
+                    <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+                  </svg>
+                )
+              },
+              { platform: 'Youtube Shorts', desc: 'Enhance your YouTube Shorts by adding gameplay to create dynamic and engaging content.', icon: <Youtube className="w-6 h-6" /> },
+              { platform: 'Facebook Reels', desc: 'Transform Facebook Reels into engaging content by adding gameplay to captivate viewers.', icon: <Facebook className="w-6 h-6" /> },
+              {
+                platform: 'Twitter (X) videos', desc: 'Enhance your X videos by incorporating gameplay to grab attention and keep viewers hooked.', icon: (
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                  </svg>
+                )
+              },
+              { platform: 'Thread Videos', desc: 'Boost your Thread videos with gameplay! Engaging visuals captivate viewers and enhance your content.', icon: <AtSign className="w-6 h-6" /> },
             ].map((tool) => (
               <div key={tool.platform} className="group border-l border-white/5 pl-8 py-4 hover:border-yellow-500/50 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-black transition-all text-3xl">
-                  {tool.icon}
-                </div>
-                <div className="flex gap-1.5 mb-6">
-                  <div className="w-12 h-0.5 bg-white/10" />
-                  <div className="w-4 h-0.5 bg-white/10" />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                    {tool.icon}
+                  </div>
+                  <div className="flex flex-col gap-1.5 opacity-20 group-hover:opacity-40 transition-opacity">
+                    <div className="w-10 h-px bg-white" />
+                    <div className="w-6 h-px bg-white self-end" />
+                  </div>
                 </div>
                 <h3 className="text-lg font-bold mb-4">{tool.platform}</h3>
                 <p className="text-white/40 text-sm leading-relaxed max-w-[280px]">{tool.desc}</p>
