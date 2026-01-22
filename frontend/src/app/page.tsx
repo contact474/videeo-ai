@@ -553,21 +553,22 @@ export default function LandingPage() {
 
             <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group min-h-[350px]">
               {/* Stacked Cards Animation */}
-              <div className="relative w-64 h-44 mb-10">
+              <div className="relative w-64 h-44 mb-10 group/cards">
                 {/* Back card */}
-                <div className="absolute inset-0 bg-white/5 border border-white/5 rounded-2xl transform scale-90 -translate-y-4 opacity-40 transition-transform duration-500 group-hover:-translate-y-6" />
+                <div className="absolute inset-0 z-0 bg-white/5 border border-white/5 rounded-2xl transform scale-90 -translate-y-3 opacity-40 transition-transform duration-500 group-hover/cards:-translate-y-5" />
                 {/* Middle card */}
-                <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl transform scale-95 -translate-y-2 opacity-70 transition-transform duration-500 group-hover:-translate-y-3" />
-                {/* Front card */}
-                <div className="absolute inset-0 bg-[#1a1a1a] border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl relative z-20 overflow-visible group-hover:border-yellow-500/30 transition-colors duration-500">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden" />
+                <div className="absolute inset-0 z-10 bg-white/5 border border-white/10 rounded-2xl transform scale-95 -translate-y-1.5 opacity-70 transition-transform duration-500 group-hover/cards:-translate-y-2.5" />
+                {/* Front card - Video Frame */}
+                <div className="absolute inset-0 z-20 bg-[#1a1a1a] border-2 border-white/10 rounded-2xl flex items-center justify-center shadow-2xl group-hover/cards:border-yellow-500 transition-colors duration-500">
+                  {/* Inner Gradient */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-yellow-500/10 to-transparent opacity-0 group-hover/cards:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
-                  {/* Glow behind play button */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-yellow-500/20 blur-[35px] rounded-full pointer-events-none group-hover:bg-yellow-500/30 transition-colors" />
+                  {/* Glow */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-yellow-500/10 blur-[50px] rounded-full pointer-events-none group-hover/cards:bg-yellow-500/20 transition-colors" />
 
                   {/* Play Button */}
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500 relative z-10">
-                    <Play className="w-6 h-6 text-black fill-current ml-0.5" />
+                  <div className="relative z-30 w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg transform group-hover/cards:scale-110 transition-transform duration-500">
+                    <Play className="w-7 h-7 text-black fill-current ml-1" />
                   </div>
                 </div>
               </div>
