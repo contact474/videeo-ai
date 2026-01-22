@@ -460,14 +460,56 @@ export default function LandingPage() {
               </h3>
             </div>
 
-            <div className="md:col-span-3 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col">
-              <div className="flex gap-2 mb-8 overflow-hidden grayscale opacity-40">
-                <div className="w-full aspect-[2/3] bg-white/10 rounded-lg" />
-                <div className="w-full aspect-[2/3] bg-white/10 rounded-lg" />
-                <div className="w-full aspect-[2/3] bg-white/10 rounded-lg" />
+            <div className="md:col-span-3 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col relative overflow-hidden group min-h-[400px]">
+              {/* Carousel Container */}
+              <div className="absolute inset-x-0 top-0 bottom-32 overflow-hidden flex items-center justify-center">
+                {/* Scrolling Track */}
+                <motion.div
+                  animate={{ x: ["-20%", "-120%"] }}
+                  transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                  className="flex gap-4 min-w-max"
+                >
+                  {[...Array(4)].map((_, groupIndex) => (
+                    <React.Fragment key={groupIndex}>
+                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
+                        <Image
+                          src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=400&h=600&fit=crop"
+                          alt="Video template" fill className="object-cover"
+                        />
+                      </div>
+                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
+                        <Image
+                          src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=400&h=600&fit=crop"
+                          alt="Video template" fill className="object-cover"
+                        />
+                      </div>
+                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
+                        <Image
+                          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop"
+                          alt="Video template" fill className="object-cover"
+                        />
+                      </div>
+                      <div className="w-[140px] aspect-[9/16] relative rounded-xl overflow-hidden shrink-0">
+                        <Image
+                          src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=400&h=600&fit=crop"
+                          alt="Video template" fill className="object-cover"
+                        />
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </motion.div>
+
+                {/* Focus Overlay - Sides Dimmed */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#111]/90 via-transparent to-[#111]/90 z-10 pointer-events-none" />
+
+                {/* Center Focus Border */}
+                <div className="absolute w-[140px] aspect-[9/16] rounded-xl border-2 border-yellow-500/80 shadow-[0_0_40px_rgba(234,179,8,0.2)] z-20 pointer-events-none" />
               </div>
-              <h3 className="text-2xl font-bold leading-tight mb-2 mt-auto">Video Background</h3>
-              <p className="text-white/40 text-sm">Choose an AI-generated custom video template from our library.</p>
+
+              <div className="relative z-20 mt-auto text-center">
+                <h3 className="text-2xl font-bold leading-tight mb-2">Video Background</h3>
+                <p className="text-white/40 text-sm">Choose an AI-generated custom video template from our library.</p>
+              </div>
             </div>
 
             <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[350px]">
