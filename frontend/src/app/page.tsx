@@ -551,10 +551,27 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
-              <div className="w-32 h-20 bg-black border border-white/10 rounded-2xl flex items-center justify-center mb-12">
-                <div className="w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center"><Play className="w-5 h-5 text-yellow-500 fill-current" /></div>
+            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group min-h-[350px]">
+              {/* Stacked Cards Animation */}
+              <div className="relative w-48 h-32 mb-10">
+                {/* Back card */}
+                <div className="absolute inset-0 bg-white/5 border border-white/5 rounded-2xl transform scale-90 -translate-y-4 opacity-40 transition-transform duration-500 group-hover:-translate-y-6" />
+                {/* Middle card */}
+                <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl transform scale-95 -translate-y-2 opacity-70 transition-transform duration-500 group-hover:-translate-y-3" />
+                {/* Front card */}
+                <div className="absolute inset-0 bg-[#1a1a1a] border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-yellow-500/30 transition-colors duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Glow behind play button */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-yellow-500/20 blur-[30px] rounded-full pointer-events-none group-hover:bg-yellow-500/30 transition-colors" />
+
+                  {/* Play Button */}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500 relative z-10">
+                    <Play className="w-5 h-5 text-black fill-current ml-0.5" />
+                  </div>
+                </div>
               </div>
+
               <h3 className="text-2xl font-bold leading-tight mb-2">Cross Platform Videos</h3>
               <p className="text-white/40 text-sm leading-relaxed px-4">Create videos tailored for various platforms, including YouTube, Instagram, and TikTok.</p>
             </div>
