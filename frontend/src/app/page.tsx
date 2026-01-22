@@ -503,22 +503,52 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[350px]">
-              <div className="mb-auto py-8">
-                <div className="flex items-center gap-1.5 scale-y-150 transform">
-                  {[1, 2, 3, 4, 5, 6, 7, 2, 9, 3, 4, 1, 5, 3, 6].map((h, i) => (
-                    <div key={i} className="flex-1 bg-yellow-500/20 rounded-full" style={{ height: `${h * 4}px` }} />
+            <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col min-h-[350px] relative overflow-hidden group">
+
+              {/* Audio Visualizer Container */}
+              <div className="mb-auto relative z-10 w-full flex flex-col gap-8 pt-6">
+
+                {/* Waveform Animation */}
+                <div className="h-16 flex items-center justify-center gap-1.5 px-4 w-full">
+                  {[...Array(24)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="w-1.5 bg-yellow-500/80 rounded-full"
+                      animate={{
+                        height: [12, Math.random() * 40 + 12, 12],
+                        opacity: [0.4, 1, 0.4]
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.05
+                      }}
+                    />
                   ))}
                 </div>
-                <div className="mt-8 flex items-center gap-4 bg-yellow-500/5 border border-yellow-500/10 rounded-2xl p-4">
-                  <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center"><Play className="w-6 h-6 text-black fill-current" /></div>
+
+                {/* Player Card */}
+                <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-4 flex items-center gap-4 relative overflow-hidden group/card hover:border-yellow-500/40 transition-colors">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-transparent pointer-events-none" />
+
+                  {/* Play Button */}
+                  <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center shrink-0 shadow-lg shadow-yellow-500/20 group-hover/card:scale-105 transition-transform">
+                    <Play className="w-5 h-5 text-black fill-current ml-0.5" />
+                  </div>
+
+                  {/* Track Info */}
                   <div>
-                    <div className="text-xs font-bold text-yellow-500">Mermaid Deep Ocean</div>
-                    <div className="text-[10px] font-medium text-yellow-500/60">Julian Seja</div>
+                    <div className="text-sm font-bold text-white mb-0.5">Mermaid Deep Ocean</div>
+                    <div className="text-xs font-medium text-yellow-500">Julian Seja</div>
                   </div>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold leading-tight">AI Voice Narrator</h3>
+
+              <div className="mt-8 relative z-10">
+                <h3 className="text-2xl font-bold leading-tight mb-2">AI Voice Narrator</h3>
+                <p className="text-white/40 text-sm">Quickly generate lifelike AI voiceovers, converting text into natural-sounding narration.</p>
+              </div>
             </div>
 
             <div className="md:col-span-4 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
