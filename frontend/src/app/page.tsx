@@ -727,22 +727,33 @@ export default function LandingPage() {
 
       {/* Final CTA Section */}
       <section className="py-32 bg-black px-6">
-        <div className="max-w-5xl mx-auto p-12 md:p-24 rounded-[40px] border border-white/10 bg-gradient-to-br from-yellow-500/10 via-black to-black relative overflow-hidden text-center">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-yellow-500/20 blur-[80px]" />
+        <div className="max-w-5xl mx-auto p-12 md:p-24 rounded-[48px] border border-white/5 bg-[#0a0a0a] relative overflow-hidden text-center group">
+          {/* Background Glows */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-yellow-500/10 blur-[120px] rounded-full pointer-events-none" />
 
-          <h2 className="relative z-10 text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
+          {/* Decorative Sparkles */}
+          <div className="absolute top-12 left-12 text-white/10 select-none pointer-events-none">+</div>
+          <div className="absolute bottom-24 left-32 text-white/5 select-none pointer-events-none text-xs">+</div>
+          <div className="absolute top-24 right-24 text-white/5 select-none pointer-events-none text-sm">+</div>
+          <div className="absolute bottom-12 right-12 text-white/10 select-none pointer-events-none">.</div>
+          <div className="absolute top-1/2 left-12 text-white/10 select-none pointer-events-none">.</div>
+
+          <h2 className="relative z-10 text-5xl md:text-7xl font-bold tracking-tighter mb-6 leading-none text-white">
             Experience the <span className="bg-gradient-to-r from-[#FFF089] to-[#D97706] bg-clip-text text-transparent">Magic</span>
           </h2>
-          <p className="relative z-10 max-w-xl mx-auto text-white/60 mb-12 text-lg">
+          <p className="relative z-10 max-w-lg mx-auto text-white/40 mb-12 text-base md:text-lg leading-relaxed">
             Create endless short videos simultaneously with automatic captions, effects, backgrounds, and music.
           </p>
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/dashboard" className="w-[180px] bg-yellow-500 text-black py-4 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 shadow-[0_10px_40px_rgba(234,179,8,0.3)]">
-              Try now <ChevronRight className="w-4 h-4" />
-            </Link>
-            <button className="w-[180px] bg-white/5 border border-white/10 text-white py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
-              Learn more
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="relative group/btn">
+              {/* Glow effect for button */}
+              <div className="absolute -inset-1 bg-yellow-500/20 blur-xl rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
+              <Link href="/dashboard" className="relative w-[180px] bg-gradient-to-r from-yellow-400 to-yellow-600 text-black py-4 rounded-xl font-bold text-lg hover:from-yellow-300 hover:to-yellow-500 transition-all flex items-center justify-center gap-2 active:scale-95 shadow-[0_10px_30px_rgba(234,179,8,0.2)]">
+                Try now <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <button className="w-[180px] bg-white/[0.03] border border-white/10 text-white/80 py-4 rounded-xl font-bold text-lg hover:bg-white/[0.08] hover:text-white transition-all flex items-center justify-center gap-2">
+              Learn more <ChevronRight className="w-4 h-4 opacity-50" />
             </button>
           </div>
         </div>
